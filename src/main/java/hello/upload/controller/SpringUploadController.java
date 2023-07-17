@@ -23,6 +23,7 @@ public class SpringUploadController {
 
     @GetMapping("/upload")
     public String newFile(){
+
         return "upload-form";
     }
 
