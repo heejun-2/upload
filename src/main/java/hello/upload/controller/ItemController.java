@@ -69,8 +69,8 @@ public class ItemController {
     @GetMapping("/attach/{itemId}")
     public ResponseEntity<Resource> downloadAttach(@PathVariable Long itemId) throws MalformedURLException {
         Item item = itemRepository.findById(itemId);
-        String storeFileName = item.getAttachFile().getStoreFileName();
         String uploadFileName = item.getAttachFile().getUploadFileName();
+        String storeFileName = item.getAttachFile().getStoreFileName();
 
         UrlResource resource = new UrlResource("file:" + fileStore.getFillPath(storeFileName));
 
